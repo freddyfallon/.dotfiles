@@ -16,8 +16,6 @@ Plug 'w0rp/ale'
 call plug#end()
 
 " Ale config
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\}
+let g:ale_linters = {'javascript': ['eslint']}
 let g:ale_fixers = ['eslint', 'prettier']
 let g:ale_fix_on_save = 1
