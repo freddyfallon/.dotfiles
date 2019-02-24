@@ -3,7 +3,7 @@ set softtabstop=2
 set number
 
 " NERDTreeToggle
-map <C-n> :NERDTreeToggle<CR>
+map <C-p> :NERDTreeToggle<CR>
 
 " vim-plug settings
 call plug#begin('~/.vim/plugged')
