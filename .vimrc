@@ -2,9 +2,6 @@ set shiftwidth=2
 set softtabstop=2
 set number
 
-" NERDTreeToggle
-map <C-p> :NERDTreeToggle<CR>
-
 " vim-plug settings
 call plug#begin('~/.vim/plugged')
 
@@ -15,6 +12,9 @@ Plug 'w0rp/ale'
 Plug 'takac/vim-hardtime'
 
 call plug#end()
+
+" NERDTreeToggle
+map <C-n> :NERDTreeToggle<CR>
 
 " Ale config
 let g:ale_linters = {'javascript': ['eslint']}
