@@ -32,4 +32,5 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'w0rp/ale'
 Plug 'takac/vim-hardtime'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-commentary'
 call plug#end()
