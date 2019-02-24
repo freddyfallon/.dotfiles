@@ -3,6 +3,9 @@ set shiftwidth=2
 set softtabstop=2
 set number
 
+syntax on
+colorscheme cosme
+
 " NERDTreeToggle
 map <C-n> :NERDTreeToggle<CR>
 
