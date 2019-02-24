@@ -6,6 +6,13 @@ set number
 " NERDTreeToggle
 map <C-n> :NERDTreeToggle<CR>
 
+" Ctrl-p
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
+let g:ctrlp_use_caching = 0
+
 " Ale config
 let g:ale_linters = {'javascript': ['eslint']}
 let g:ale_fixers = ['eslint', 'prettier']
@@ -14,11 +21,6 @@ let g:ale_fix_on_save = 1
 " Hardtime
 let g:hardtime_default_on = 1
 
-" Fuzzy Finder
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-
-let g:ctrlp_working_path_mode = 'ra'
 " vim-plug settings
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
