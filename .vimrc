@@ -34,4 +34,5 @@ Plug 'takac/vim-hardtime'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dotenv'
+Plug 'tpope/vim-fugitive'
 call plug#end()
