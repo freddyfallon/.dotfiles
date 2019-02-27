@@ -6,8 +6,9 @@ set number
 syntax on
 colorscheme cosme
 
-" NERDTreeToggle
+" NERDTree
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 " Ctrl-p
 let g:ctrlp_map = '<c-p>'
