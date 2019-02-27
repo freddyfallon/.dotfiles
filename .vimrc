@@ -25,6 +25,16 @@ let g:ale_fix_on_save = 1
 " Hardtime
 let g:hardtime_default_on = 1
 
+" Airline
+let g:airline_left_sep = ' ★  '
+let g:airline_theme = 'dracula'
+let g:airline_section_y = ''
+let g:airline_section_x = ''
+let g:airline_section_warning = ''
+let g:airline#extensions#tabline#enabled = 0
+let g:airline#extensions#branch#enabled = 1
+set laststatus=2 " for airline
+
 " vim-plug settings
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
@@ -36,4 +46,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dotenv'
 Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
