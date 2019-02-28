@@ -1,6 +1,8 @@
-# My Vim config
+# My dotfiles
 
-## Installation
+## My Vim config
+
+### Installation
 
 Copy the contents of `.vimrc` into your own `.vimrc` at the root of your home directory.
 
@@ -18,3 +20,7 @@ Once you have the two items above, simply open up a Vim session and type:
 You should also copy the contents of `/themes` into your `.vim/colors` directory.
 
 Now everything should work great.
+
+## My .zshrc
+
+Simply copy the contents of the `.zshrc` into yours and it should be all good.
