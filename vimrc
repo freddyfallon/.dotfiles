@@ -3,6 +3,14 @@ set shiftwidth=2
 set softtabstop=2
 set number
 
+set nobackup
+set nowritebackup
+set noswapfile
+set ruler
+set showcmd
+set incsearch
+set autowrite
+
 syntax on
 colorscheme cosme
 
