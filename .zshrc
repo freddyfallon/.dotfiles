@@ -7,6 +7,23 @@ plugins=(
   git
 )
 
+# Docker blitz
+blitz-docker-all() {
+  docker container rm -f $(docker container ls -a -q);
+  docker image rm -f $(docker image ls -q);
+  docker volume rm $(docker volume ls -q);
+  docker network rm $(docker network ls -q);
+}
+
+blitz-docker-containers() {
+  docker container rm -f $(docker container ls -a -q);
+}
+
+blitz-docker-mid() {
+  docker container rm -f $(docker container ls -a -q)
+  docker volume rm $(docker volume ls -q);
+}
+
 # weather
 alias weather='curl -4 http://wttr.in/London'
 
