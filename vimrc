@@ -2,7 +2,6 @@
 set shiftwidth=2
 set softtabstop=2
 set number
-
 set nobackup
 set nowritebackup
 set noswapfile
@@ -10,6 +9,36 @@ set ruler
 set showcmd
 set incsearch
 set autowrite
+
+let mapleader = ","
+
+" Split edit your vimrc. Type space, v, r in sequence to trigger
+nmap <leader>vr :vsp $MYVIMRC<cr>
+" Source (reload) your vimrc. Type space, s, o in sequence to trigger
+nmap <leader>so :source $MYVIMRC<cr>
+
+" Move to start of first non-whitespace character
+nmap <leader>0 ^
+
+" Copy entire buffer into system clipboard
+nmap <leader>co ggVG*y
+
+" Move up and down by visible lines if current line is wrapped
+nmap j gj
+nmap k gk
+
+" Quick exit from insert mode
+imap jk <esc>
+imap kj <esc>
+
+" Command aliases for typoed commands (accidentally holding shift too long)
+command! Q q " Bind :Q to :q
+command! Qall qall
+command! QA qall
+command! E e
+
+" Bind `q` to close the buffer for help files
+autocmd Filetype help nnoremap <buffer> q :q<CR>
 
 syntax on
 colorscheme cosme
