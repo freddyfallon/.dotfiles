@@ -27,6 +27,9 @@ blitz-docker-mid() {
 # weather
 alias weather='curl -4 http://wttr.in/London'
 
+# speedtest
+alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
+
 # oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
