@@ -1,6 +1,5 @@
 # My dotfiles
-
-## My Vim config
+This repo allows me to share and sync dotfiles across different computers.
 
 ### Installation
 
