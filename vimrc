@@ -43,6 +43,10 @@ autocmd Filetype help nnoremap <buffer> q :q<CR>
 syntax on
 colorscheme cosme
 
+" VimTest remappings
+nmap <leader>tt :TestFile<cr>
+nmap <leader>ty :TestSuite<cr>
+
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
