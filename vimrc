@@ -67,7 +67,6 @@ let g:ale_fix_on_save = 1
 let g:hardtime_default_on = 1
 
 " Airline
-let g:airline_left_sep = ' ★  '
 let g:airline_theme = 'dracula'
 let g:airline_section_y = ''
 let g:airline_section_x = ''
