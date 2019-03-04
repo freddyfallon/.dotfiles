@@ -47,10 +47,6 @@ colorscheme cosme
 nmap <leader>tt :TestFile<cr>
 nmap <leader>ty :TestSuite<cr>
 
-" NERDTree
-map <C-n> :NERDTreeToggle<CR>
-let NERDTreeShowHidden=1
-
 " Ctrl-p
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -79,7 +75,6 @@ set laststatus=2 " for airline
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'janko-m/vim-test'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'w0rp/ale'
 Plug 'takac/vim-hardtime'
 Plug 'ctrlpvim/ctrlp.vim'
