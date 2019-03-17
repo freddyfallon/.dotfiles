@@ -3,12 +3,18 @@ This repo allows me to share and sync dotfiles across different computers.
 
 ### Installation
 
-You will need the following:
+Make sure that you clone this repo into your home directory:
+
+```
+git pull git@github.com:freddyfallon/dotfiles.git
+```
+
+The following should be automatically installed when you first open Vim, but if for some weird reason it doesn't work, you can install them manually:
 
 1. [vim-plug](https://github.com/junegunn/vim-plug): Follow the instructions on the GitHub repo's README
 2. [The Silver Searcher](https://github.com/ggreer/the_silver_searcher): Again, follow the install instructions in the repo's README.
 
-Once you have the two items above, install [rcm](https://github.com/thoughtbot/rcm):
+Install [rcm](https://github.com/thoughtbot/rcm):
 
 ```
 brew tap thoughtbot/formulae
@@ -26,13 +32,7 @@ This command will create symlinks for config files in your home directory. Setti
 
 Exclude `README.md`, which is part of the dotfiles repository but does not need to be symlinked in.
 
-Then, open Vim and run:
-
-```
-:PlugInstall
-```
-
-Now everything should work great.
+Everything should simply work once you run Vim for the first time.
 
 ### Updates
 
