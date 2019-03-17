@@ -71,6 +71,18 @@ let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#branch#enabled = 1
 set laststatus=2 " for airline
 
+" Check if vim-plug is installed and if not, install it!
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Check if the_silver_searcher is installed and if not, install it!
+if empty(glob('/usr/local/Cellar/the_silver_searcher'))
+  silent !brew install the_silver_searcher
+endif
+
 " vim-plug settings
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
