@@ -54,6 +54,9 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_user_command = 'ag %s -l --hidden --ignore-dir .git --nocolor -g ""'
 let g:ctrlp_use_caching = 0
 
+" Ctrl-SF
+nmap <c-f> <Plug>CtrlSFPrompt
+
 " Ale config
 let g:ale_linters = {'javascript': ['eslint']}
 let g:ale_fixers = ['eslint', 'prettier']
@@ -99,4 +102,5 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'sheerun/vim-polyglot'
 Plug 'raimondi/delimitmate'
+Plug 'dyng/ctrlsf.vim'
 call plug#end()
