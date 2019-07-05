@@ -28,9 +28,20 @@ packages=(
 "git"
 "node"
 "tmux"
-"neovim"
+"vim"
 "zsh"
 )
+
+for i in "${packages[@]}"
+do
+  installed=$(brew list | grep -w $i)
+  if [ ! "$installed" ]; then
+    echo "$i not installed, installing"
+    brew install $i
+    echo "$i installed"
+    echo "---------------------------------------------------------"
+  fi
+done
 
 echo "---------------------------------------------------------"
 
