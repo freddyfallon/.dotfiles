@@ -7,8 +7,6 @@ echo "---------------------------------------------------------"
 if [ ! -d "$homebrew" ]; then
   echo "Homebrew not installed, installing"
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  echo "Setting dotfiles"
-  env RCRC=$HOME/dotfiles/rcrc rcup
   echo "Done!"
 else
   echo "Homebrew installed"
@@ -56,6 +54,15 @@ fi
 
 echo "---------------------------------------------------------"
 
+localRepo=$(ls $HOME | grep -w dotfiles)
+
+if [ ! "$localRepo" ]; then
+  echo "Cloning dotfiles"
+  git clone https://github.com/freddyfallon/dotfiles.git ~/dotfiles
+fi
+
+echo "---------------------------------------------------------"
+
 if [ "$shell" != "/bin/zsh" ]; then
 echo shell
 
@@ -77,6 +84,6 @@ echo "Running rcup command"
 echo "This is symlink the rc files in .dofiles"
 echo "with the rc files in $HOME"
 
-rcup
+env RCRC=$HOME/dotfiles/rcrc rcup
 
 echo "---------------------------------------------------------"
