@@ -3,6 +3,12 @@ This repo allows me to share and sync dotfiles across different computers.
 
 ### Installation
 
+If you're using this for the first time, you can simply run:
+
+```
+curl -o - https://raw.githubusercontent.com/freddyfallon/dotfiles/master/install.sh | sh
+```
+
 Make sure that you clone this repo into your home directory:
 
 ```
