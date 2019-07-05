@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "INSTALLING"
 homebrew=/usr/local/Homebrew
 rcm=/usr/local/Cellar/rcm
 shell=$( echo $SHELL)
@@ -26,10 +27,10 @@ fi
 
 packages=(
 "git"
-"node"
 "tmux"
 "vim"
 "zsh"
+"nvm"
 )
 
 for i in "${packages[@]}"
