@@ -32,11 +32,13 @@ fi
 
 packages=(
 "git"
-"tmux"
+"netcat"
 "nvm"
+"tmux"
 "vim"
-"zsh"
+"yarn"
 "z"
+"zsh"
 )
 
 for i in "${packages[@]}"
