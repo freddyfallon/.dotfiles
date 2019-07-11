@@ -31,6 +31,7 @@ else
 fi
 
 packages=(
+"cmake",
 "git"
 "netcat"
 "nvm"
