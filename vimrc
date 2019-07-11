@@ -59,7 +59,7 @@ nmap <c-f> <Plug>CtrlSFPrompt
 
 " Ale config
 let g:ale_linters = {'javascript': ['eslint']}
-let g:ale_fixers = ['eslint', 'prettier']
+let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'typescript': ['prettier']}
 let g:ale_fix_on_save = 1
 
 " Hardtime
@@ -74,6 +74,13 @@ let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#branch#enabled = 1
 set laststatus=2 " for airline
 
+
+" YouCompleteMe TypeScript
+if !exists("g:ycm_semantic_triggers")
+  let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers['typescript'] = ['.']
+
 " Check if vim-plug is installed and if not, install it!
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -85,6 +92,18 @@ endif
 if empty(glob('/usr/local/Cellar/the_silver_searcher'))
   silent !brew install the_silver_searcher
 endif
+
+function! BuildYCM(info)
+if a:info.status == 'installed' || a:info.force
+    !./install.py
+  endif
+endfunction
+
+function! BuildVimProc(info)
+if a:info.status == 'installed' || a:info.force
+    make
+  endif
+endfunction
 
 " vim-plug settings
 call plug#begin('~/.vim/plugged')
@@ -103,4 +122,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'sheerun/vim-polyglot'
 Plug 'raimondi/delimitmate'
 Plug 'dyng/ctrlsf.vim'
+Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+Plug 'quramy/tsuquyomi'
+Plug 'leafgarland/typescript-vim'
+Plug 'Shougo/vimproc.vim', { 'do': function('BuildVimProc')}
 call plug#end()
