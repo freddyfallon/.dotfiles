@@ -31,15 +31,15 @@ else
 fi
 
 packages=(
-"cmake",
-"git"
-"netcat"
-"nvm"
-"tmux"
-"vim"
-"yarn"
-"z"
-"zsh"
+  "cmake",
+  "git"
+  "netcat"
+  "nvm"
+  "tmux"
+  "vim"
+  "yarn"
+  "z"
+  "zsh"
 )
 
 for i in "${packages[@]}"
@@ -80,8 +80,7 @@ do
   fi
 done
 
-if [ -f "$localGit" ]
-then
+if [ -f "$localGit" ]; then
   echo "git installed"
 else
   echo "git is not installed"
@@ -91,7 +90,7 @@ echo "---------------------------------------------------------"
 
 if [ -d "$localRepo" ]; then
   echo "dotfiles repo found at ~/"
-  else 
+else 
   echo "Cloning dotfiles"
   git clone https://github.com/freddyfallon/dotfiles.git ~/dotfiles
   echo "dotfiles now cloned to ~/"
@@ -100,13 +99,10 @@ fi
 echo "---------------------------------------------------------"
 
 if [ "$shell" != "/bin/zsh" ]; then
-
-echo "---------------------------------------------------------"
-
-echo "Changing to zsh"
+  echo "---------------------------------------------------------"
+  echo "Changing to zsh"
 chsh -s $(which zsh)
-echo "You'll need to log out for this to take effect"
-
+  echo "You'll need to log out for this to take effect"
 else
   echo "zsh installed"
 fi
@@ -132,12 +128,9 @@ else
 fi
 
 echo "---------------------------------------------------------"
-
 cd $HOME
 echo "Running rcup command"
 echo "This symlinks the rc files in dotfiles"
 echo "with the rc files in $HOME"
-
 env RCRC=$HOME/dotfiles/rcrc rcup
-
 echo "---------------------------------------------------------"
