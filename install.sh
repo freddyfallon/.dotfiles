@@ -31,7 +31,7 @@ else
 fi
 
 packages=(
-  "cmake",
+  "cmake"
   "git"
   "netcat"
   "nvm"
@@ -126,6 +126,42 @@ else
   cd $HOME/.oh-my-zsh && git clone git://github.com/zsh-users/zsh-syntax-highlighting.git && cd -
   echo "zsh syntax highlighting installed"
 fi
+
+
+vscodeExtensions=(
+  "asvetliakov.snapshot-tools"
+  "blanu.vscode-styled-jsx"
+  "christian-kohler.npm-intellisense"
+  "CoenraadS.bracket-pair-colorizer-2"
+  "dbaeumer.vscode-eslint"
+  "donjayamanne.githistory"
+  "dracula-theme.theme-dracula"
+  "eamodio.gitlens"
+  "EditorConfig.EditorConfig"
+  "esbenp.prettier-vscode"
+  "mikestead.dotenv"
+  "ms-azuretools.vscode-docker"
+  "ms-python.python"
+  "ms-vscode.powershell"
+  "msjsdiag.debugger-for-chrome"
+  "naumovs.color-highlight"
+  "Orta.vscode-jest"
+  "PKief.material-icon-theme"
+  "pnp.polacode"
+  "vscodevim.vim"
+)
+
+
+for i in "${vscodeExtensions[@]}"
+do
+  installed=$(code --list-extensions | grep -w $i)
+  if [ ! "$installed" ]; then
+    echo "$i not installed, installing"
+    code --install-extension $i
+    echo "$i installed"
+    echo "---------------------------------------------------------"
+  fi
+done
 
 echo "---------------------------------------------------------"
 cd $HOME
