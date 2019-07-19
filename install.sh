@@ -3,7 +3,7 @@ echo "INSTALLING"
 
 homebrew=/usr/local/Homebrew
 rcm=/usr/local/Cellar/rcm
-shell=$( echo $SHELL)
+shell=$SHELL
 localRepo="$HOME/dotfiles"
 localGit="/usr/local/bin/git"
 ohMyZsh="$HOME/.oh-my-zsh"
@@ -44,10 +44,10 @@ packages=(
 
 for i in "${packages[@]}"
 do
-  installed=$(brew list | grep -w $i)
+  installed=$(brew list | grep -w "$i")
   if [ ! "$installed" ]; then
     echo "$i not installed, installing"
-    brew install $i
+    brew install "$i"
     echo "$i installed"
     echo "---------------------------------------------------------"
   fi
@@ -71,10 +71,10 @@ caskPackages=(
 
 for i in "${caskPackages[@]}"
 do
-  installed=$(brew cask list | grep -w $i)
+  installed=$(brew cask list | grep -w "$i")
   if [ ! "$installed" ]; then
     echo "$i not installed, installing"
-    brew cask install $i
+    brew cask install "$i"
     echo "$i installed"
     echo "---------------------------------------------------------"
   fi
@@ -101,7 +101,7 @@ echo "---------------------------------------------------------"
 if [ "$shell" != "/bin/zsh" ]; then
   echo "---------------------------------------------------------"
   echo "Changing to zsh"
-chsh -s $(which zsh)
+  chsh -s "$(command -v zsh)"
   echo "You'll need to log out for this to take effect"
 else
   echo "zsh installed"
@@ -123,7 +123,7 @@ if [ -d "$syntaxHighlighting" ]; then
   echo "zsh syntax highlighting installed"
 else
   echo "zsh syntax highlighting not installed, installing"
-  cd $HOME/.oh-my-zsh && git clone git://github.com/zsh-users/zsh-syntax-highlighting.git && cd -
+  cd "$HOME/.oh-my-zsh" || exit && git clone git://github.com/zsh-users/zsh-syntax-highlighting.git && cd - || exit
   echo "zsh syntax highlighting installed"
 fi
 
@@ -154,19 +154,19 @@ vscodeExtensions=(
 
 for i in "${vscodeExtensions[@]}"
 do
-  installed=$(code --list-extensions | grep -w $i)
+  installed=$(code --list-extensions | grep -w "$i")
   if [ ! "$installed" ]; then
     echo "$i not installed, installing"
-    code --install-extension $i
+    code --install-extension "$i"
     echo "$i installed"
     echo "---------------------------------------------------------"
   fi
 done
 
 echo "---------------------------------------------------------"
-cd $HOME
+cd "$HOME" || exit
 echo "Running rcup command"
 echo "This symlinks the rc files in dotfiles"
 echo "with the rc files in $HOME"
-env RCRC=$HOME/dotfiles/rcrc rcup
+env RCRC="$HOME/dotfiles/rcrc" rcup
 echo "---------------------------------------------------------"
