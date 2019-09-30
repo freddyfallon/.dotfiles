@@ -149,6 +149,8 @@ vscodeExtensions=(
   "PKief.material-icon-theme"
   "pnp.polacode"
   "vscodevim.vim"
+  "jpoissonnier.vscode-styled-components"
+  "chrmarti.regex"
 )
 
 
