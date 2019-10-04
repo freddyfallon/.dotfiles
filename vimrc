@@ -75,12 +75,6 @@ let g:airline#extensions#branch#enabled = 1
 set laststatus=2 " for airline
 
 
-" YouCompleteMe TypeScript
-if !exists("g:ycm_semantic_triggers")
-  let g:ycm_semantic_triggers = {}
-endif
-let g:ycm_semantic_triggers['typescript'] = ['.']
-
 " Check if vim-plug is installed and if not, install it!
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -122,8 +116,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'sheerun/vim-polyglot'
 Plug 'raimondi/delimitmate'
 Plug 'dyng/ctrlsf.vim'
-Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 Plug 'quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
 Plug 'Shougo/vimproc.vim', { 'do': function('BuildVimProc')}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
