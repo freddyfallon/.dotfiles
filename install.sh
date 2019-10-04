@@ -36,7 +36,7 @@ packages=(
   "netcat"
   "nvm"
   "tmux"
-  "vim"
+  "neovim"
   "yarn"
   "z"
   "zsh"

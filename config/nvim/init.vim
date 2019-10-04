@@ -87,12 +87,6 @@ if empty(glob('/usr/local/Cellar/the_silver_searcher'))
   silent !brew install the_silver_searcher
 endif
 
-function! BuildYCM(info)
-if a:info.status == 'installed' || a:info.force
-    !./install.py
-  endif
-endfunction
-
 function! BuildVimProc(info)
 if a:info.status == 'installed' || a:info.force
     make
@@ -121,3 +115,32 @@ Plug 'leafgarland/typescript-vim'
 Plug 'Shougo/vimproc.vim', { 'do': function('BuildVimProc')}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
+
+
+" coc config
+
+
+" coc-vim config
+
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+
+" Coc Configuration
+let g:coc_global_extensions = [
+  \ 'coc-css',
+  \ 'coc-git',
+  \ 'coc-highlight',
+  \ 'coc-html',
+  \ 'coc-json',
+  \ 'coc-lists',
+  \ 'coc-tsserver',
+  \ 'coc-yaml'
+\ ]
