@@ -62,9 +62,6 @@ let g:ale_linters = {'javascript': ['eslint']}
 let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'typescript': ['prettier']}
 let g:ale_fix_on_save = 1
 
-" Hardtime
-let g:hardtime_default_on = 1
-
 " Airline
 let g:airline_theme = 'dracula'
 let g:airline_section_y = ''
@@ -98,7 +95,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'janko-m/vim-test'
 Plug 'w0rp/ale'
-Plug 'takac/vim-hardtime'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
