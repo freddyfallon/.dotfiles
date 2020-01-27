@@ -3,10 +3,6 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
 
-plugins=(
-  git
-)
-
 # Docker blitz
 blitz-docker-all() {
   docker container rm -f $(docker container ls -a -q);
