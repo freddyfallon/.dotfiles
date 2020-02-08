@@ -37,6 +37,7 @@ packages=(
   "nvm"
   "tmux"
   "neovim"
+  "vim"
   "yarn"
   "z"
   "zsh"
