@@ -56,8 +56,3 @@ set -o vi
 # Remap Ctrl-R to backward-search
 bindkey "^R" history-incremental-search-backward
 
-# Add alias so that nvim is always used
-if type nvim > /dev/null 2>&1; then
-  alias vim='nvim'
-  alias vi='nvim'
-fi
