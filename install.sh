@@ -156,7 +156,6 @@ vscodeExtensions=(
   "PKief.material-icon-theme"
   "pnp.polacode"
   "Prisma.vscode-graphql"
-  "TabNine.tabnine-vscode"
   "vscodevim.vim"
 )
 
