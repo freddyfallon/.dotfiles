@@ -10,6 +10,7 @@ plugins=(
   osx
   nvm
   yarn
+  zsh-autosuggestions
 )
 
 # Docker blitz

@@ -8,6 +8,7 @@ localRepo="$HOME/dotfiles"
 localGit="/usr/local/bin/git"
 ohMyZsh="$HOME/.oh-my-zsh"
 syntaxHighlighting="$HOME/.oh-my-zsh/zsh-syntax-highlighting"
+zshAutoSuggestions="$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/"
 
 echo "---------------------------------------------------------"
 
@@ -116,6 +117,16 @@ else
   echo "oh-my-zsh not installed, installing"
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   echo "oh-my-zsh installed"
+fi
+
+echo "---------------------------------------------------------"
+
+if [ -d "$zshAutoSuggestions" ]; then
+  echo "zsh-autosuggestions installed"
+else
+  echo "zsh-autosuggestions not installed, installing"
+  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+  echo "zsh-autosuggestions installed"
 fi
 
 echo "---------------------------------------------------------"
