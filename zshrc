@@ -15,19 +15,19 @@ plugins=(
 
 # Docker blitz
 blitz-docker-all() {
-  docker container rm -f $(docker container ls -a -q);
-  docker image rm -f $(docker image ls -q);
-  docker volume rm $(docker volume ls -q);
-  docker network rm $(docker network ls -q);
+  docker container rm -f $(docker container ls -a -q)
+  docker image rm -f $(docker image ls -q)
+  docker volume rm $(docker volume ls -q)
+  docker network rm $(docker network ls -q)
 }
 
 blitz-docker-containers() {
-  docker container rm -f $(docker container ls -a -q);
+  docker container rm -f $(docker container ls -a -q)
 }
 
 blitz-docker-mid() {
   docker container rm -f $(docker container ls -a -q)
-  docker volume rm $(docker volume ls -q);
+  docker volume rm $(docker volume ls -q)
 }
 
 # weather
@@ -41,15 +41,14 @@ source $ZSH/oh-my-zsh.sh
 source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # z
-. `brew --prefix`/etc/profile.d/z.sh
+. $(brew --prefix)/etc/profile.d/z.sh
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # Use vi-mode
 set -o vi
 
 # Remap Ctrl-R to backward-search
 bindkey "^R" history-incremental-search-backward
-
