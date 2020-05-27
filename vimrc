@@ -21,8 +21,7 @@ nmap <leader>so :source $MYVIMRC<cr>
 nmap <leader>0 ^
 
 " Copy entire buffer into system clipboard
-nmap <leader>co ggVG*y
-
+nmap <leader>co gg"*yG
 " Move up and down by visible lines if current line is wrapped
 nmap j gj
 nmap k gk
