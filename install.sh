@@ -67,7 +67,7 @@ caskPackages=(
   "karabiner-elements"
   "postman"
   "rocket"
-  "sizeup"
+  "pastebot"
   "visual-studio-code"
   "firefox"
   "google-chrome"
