@@ -34,6 +34,7 @@ fi
 packages=(
   "cmake"
   "git"
+  "jq"
   "netcat"
   "nvm"
   "tmux"
