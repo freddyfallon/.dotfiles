@@ -37,6 +37,7 @@ packages=(
   "jq"
   "netcat"
   "nvm"
+  "thefuck"
   "tmux"
   "neovim"
   "vim"
