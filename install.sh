@@ -142,47 +142,6 @@ else
 fi
 
 
-vscodeExtensions=(
-  "asvetliakov.snapshot-tools"
-  "blanu.vscode-styled-jsx"
-  "christian-kohler.npm-intellisense"
-  "chrmarti.regex"
-  "CoenraadS.bracket-pair-colorizer-2"
-  "dbaeumer.vscode-eslint"
-  "donjayamanne.githistory"
-  "dracula-theme.theme-dracula"
-  "eamodio.gitlens"
-  "EditorConfig.EditorConfig"
-  "esbenp.prettier-vscode"
-  "GitHub.vscode-pull-request-github"
-  "jpoissonnier.vscode-styled-components"
-  "liviuschera.noctis"
-  "mechatroner.rainbow-csv"
-  "mikestead.dotenv"
-  "ms-azuretools.vscode-docker"
-  "ms-python.python"
-  "ms-vscode.powershell"
-  "ms-vsliveshare.vsliveshare"
-  "msjsdiag.debugger-for-chrome"
-  "naumovs.color-highlight"
-  "Orta.vscode-jest"
-  "PKief.material-icon-theme"
-  "pnp.polacode"
-  "Prisma.vscode-graphql"
-  "vscodevim.vim"
-)
-
-
-for i in "${vscodeExtensions[@]}"
-do
-  installed=$(code --list-extensions | grep -w "$i")
-  if [ ! "$installed" ]; then
-    echo "$i not installed, installing"
-    code --install-extension "$i"
-    echo "$i installed"
-    echo "---------------------------------------------------------"
-  fi
-done
 
 echo "---------------------------------------------------------"
 cd "$HOME" || exit
