@@ -75,7 +75,7 @@ caskPackages=(
 
 for i in "${caskPackages[@]}"
 do
-  installed=$(brew cask list | grep -w "$i")
+  installed=$(brew list --cask | grep -w "$i")
   if [ ! "$installed" ]; then
     echo "$i not installed, installing"
     brew cask install "$i"
