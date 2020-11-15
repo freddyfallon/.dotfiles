@@ -60,3 +60,5 @@ set -o vi
 
 # Remap Ctrl-R to backward-search
 bindkey "^R" history-incremental-search-backward
+
+eval $(thefuck --alias)
