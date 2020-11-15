@@ -56,13 +56,8 @@ let g:ctrlp_use_caching = 0
 " Ctrl-SF
 nmap <c-f> <Plug>CtrlSFPrompt
 
-" Ale config
-let g:ale_linters = {'javascript': ['eslint']}
-let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'typescript': ['prettier']}
-let g:ale_fix_on_save = 1
-
 " Airline
-let g:airline_theme = 'dracula'
+let g:airline_theme = 'deus'
 let g:airline_section_y = ''
 let g:airline_section_x = ''
 let g:airline_section_warning = ''
@@ -93,7 +88,6 @@ endfunction
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'janko-m/vim-test'
-Plug 'w0rp/ale'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -110,6 +104,16 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'Shougo/vimproc.vim', { 'do': function('BuildVimProc')}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
 call plug#end()
 
 
@@ -132,11 +136,16 @@ inoremap <silent><expr> <Tab>
 " Coc Configuration
 let g:coc_global_extensions = [
   \ 'coc-css',
+  \ 'coc-eslint',
   \ 'coc-git',
   \ 'coc-highlight',
   \ 'coc-html',
   \ 'coc-json',
   \ 'coc-lists',
   \ 'coc-tsserver',
-  \ 'coc-yaml'
+  \ 'coc-yaml',
+  \ 'coc-prettier'
 \ ]
+
+au BufNewFile,BufRead *.ts setlocal filetype=typescript
+au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
