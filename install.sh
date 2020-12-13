@@ -61,8 +61,6 @@ echo "---------------------------------------------------------"
 
 caskPackages=(
   "iterm2"
-  "authy"
-  "caffeine"
   "docker"
   "karabiner-elements"
   "postman"
