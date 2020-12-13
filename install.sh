@@ -68,7 +68,7 @@ caskPackages=(
   "pastebot"
   "visual-studio-code"
   "firefox"
-  "google-chrome"
+  "brave-browser"
 )
 
 for i in "${caskPackages[@]}"
