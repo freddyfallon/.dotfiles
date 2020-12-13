@@ -48,7 +48,7 @@ packages=(
 
 for i in "${packages[@]}"
 do
-  installed=$(brew list | grep -w "$i")
+  installed=$(brew list --formula | grep -w "$i")
   if [ ! "$installed" ]; then
     echo "$i not installed, installing"
     brew install "$i"
@@ -78,7 +78,7 @@ do
   installed=$(brew list --cask | grep -w "$i")
   if [ ! "$installed" ]; then
     echo "$i not installed, installing"
-    brew cask install "$i"
+    brew install --cask "$i"
     echo "$i installed"
     echo "---------------------------------------------------------"
   fi
