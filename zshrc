@@ -41,6 +41,9 @@ blitz-docker-mid() {
 # delete all non-master git branches
 alias git-blitz='git branch | grep -v "master" | xargs git branch -D'
 
+# Add thefuck
+eval $(thefuck --alias)
+
 # weather
 alias weather='curl -4 http://wttr.in/London'
 
