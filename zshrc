@@ -38,6 +38,9 @@ blitz-docker-mid() {
   docker volume rm $(docker volume ls -q)
 }
 
+# delete all non-master git branches
+alias git-blitz='git branch | grep -v "master" | xargs git branch -D'
+
 # weather
 alias weather='curl -4 http://wttr.in/London'
 
