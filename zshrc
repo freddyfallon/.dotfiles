@@ -20,6 +20,7 @@ plugins=(
   nvm
   yarn
   zsh-autosuggestions
+  zsh-nvm
 )
 
 # Docker blitz
