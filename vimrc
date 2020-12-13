@@ -27,10 +27,6 @@ nmap <leader>co gg"*yG
 nmap j gj
 nmap k gk
 
-" Add coc go-to-definition
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gr <Plug>(coc-references)
-
 " Quick exit from insert mode
 imap jk <esc>
 imap kj <esc>
@@ -43,16 +39,6 @@ command! E e
 
 " Bind `q` to close the buffer for help files
 autocmd Filetype help nnoremap <buffer> q :q<CR>
-
-packadd! dracula_pro
-
-syntax on
-let g:dracula_colorterm = 0
-
-" You need a 256-color or truecolor terminal
-" and you may want one that supports xterm sequences for :terminal
-
-colorscheme dracula_pro
 
 " VimTest remappings
 nmap <leader>tt :TestFile<cr>
@@ -96,6 +82,11 @@ if a:info.status == 'installed' || a:info.force
   endif
 endfunction
 
+let g:coc_global_extensions = [
+  \ 'coc-tsserver'
+  \ ]
+
+
 " vim-plug settings
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
@@ -111,25 +102,14 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'sheerun/vim-polyglot'
 Plug 'raimondi/delimitmate'
 Plug 'dyng/ctrlsf.vim'
-Plug 'quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'Shougo/vimproc.vim', { 'do': function('BuildVimProc')}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install() } }
 call plug#end()
 
 
-" coc config
 
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
@@ -141,20 +121,3 @@ inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
-
-" Coc Configuration
-let g:coc_global_extensions = [
-  \ 'coc-css',
-  \ 'coc-eslint',
-  \ 'coc-git',
-  \ 'coc-highlight',
-  \ 'coc-html',
-  \ 'coc-json',
-  \ 'coc-lists',
-  \ 'coc-tsserver',
-  \ 'coc-yaml',
-  \ 'coc-prettier'
-\ ]
-
-au BufNewFile,BufRead *.ts setlocal filetype=typescript
-au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
