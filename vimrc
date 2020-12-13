@@ -27,6 +27,10 @@ nmap <leader>co gg"*yG
 nmap j gj
 nmap k gk
 
+" Add coc go-to-definition
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gr <Plug>(coc-references)
+
 " Quick exit from insert mode
 imap jk <esc>
 imap kj <esc>
