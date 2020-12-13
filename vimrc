@@ -22,6 +22,7 @@ nmap <leader>0 ^
 
 " Copy entire buffer into system clipboard
 nmap <leader>co gg"*yG
+
 " Move up and down by visible lines if current line is wrapped
 nmap j gj
 nmap k gk
@@ -39,8 +40,15 @@ command! E e
 " Bind `q` to close the buffer for help files
 autocmd Filetype help nnoremap <buffer> q :q<CR>
 
+packadd! dracula_pro
+
 syntax on
-colorscheme cosme
+let g:dracula_colorterm = 0
+
+" You need a 256-color or truecolor terminal
+" and you may want one that supports xterm sequences for :terminal
+
+colorscheme dracula_pro
 
 " VimTest remappings
 nmap <leader>tt :TestFile<cr>
@@ -118,9 +126,6 @@ call plug#end()
 
 
 " coc config
-
-
-" coc-vim config
 
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
