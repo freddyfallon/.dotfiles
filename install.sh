@@ -63,12 +63,12 @@ caskPackages=(
   "iterm2"
   "docker"
   "karabiner-elements"
-  "postman"
   "rocket"
   "pastebot"
   "visual-studio-code"
   "firefox"
   "brave-browser"
+  "insomnia"
 )
 
 for i in "${caskPackages[@]}"
