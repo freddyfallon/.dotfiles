@@ -49,9 +49,6 @@ alias git-blitz='git branch | grep -v "master" | xargs git branch -D'
 # Add thefuck
 eval $(thefuck --alias)
 
-# weather
-alias weather='curl -4 http://wttr.in/London'
-
 # speedtest
 alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
 
