@@ -37,6 +37,10 @@ command! Qall qall
 command! QA qall
 command! E e
 
+" Command alias for Prettier
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+
 " Bind `q` to close the buffer for help files
 autocmd Filetype help nnoremap <buffer> q :q<CR>
 
