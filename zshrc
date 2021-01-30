@@ -3,6 +3,7 @@ export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 
+# deno
 export DENO_INSTALL="/$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
@@ -18,7 +19,6 @@ ZSH_THEME="robbyrussell"
 plugins=(
   git
   deno
-  dotenv
   osx
   nvm
   yarn
