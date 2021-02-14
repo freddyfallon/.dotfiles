@@ -18,7 +18,6 @@ ZSH_THEME="robbyrussell"
 # oh-my-zsh-plugins
 plugins=(
   git
-  deno
   osx
   nvm
   yarn
