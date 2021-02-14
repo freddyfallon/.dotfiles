@@ -14,7 +14,7 @@ Plug 'raimondi/delimitmate'
 Plug 'dyng/ctrlsf.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 call plug#end()
 
 " General Vim config
@@ -191,6 +191,10 @@ endif
 
 
 let g:coc_global_extensions = [
-  \ 'coc-tsserver'
+  \ 'coc-tsserver',
+  \ 'coc-eslint',
+  \ 'coc-prettier',
+  \ 'coc-emmet',
+  \ 'coc-tailwindcss'
   \ ]
-" ============ END OF CoC-Config === === === ===
+" ============ End of CoC config ============
