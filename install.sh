@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 echo "INSTALLING"
 
 homebrew=/usr/local/Homebrew
@@ -38,10 +38,8 @@ packages=(
   "git"
   "jq"
   "netcat"
-  "nvm"
   "thefuck"
   "tmux"
-  "neovim"
   "vim"
   "yarn"
   "z"
@@ -61,26 +59,28 @@ done
 
 echo "---------------------------------------------------------"
 
-caskPackages=(
-  "appcleaner"
-  "iterm2"
-  "docker"
-  "karabiner-elements"
-  "rocket"
-  "pastebot"
-  "visual-studio-code"
-  "firefox"
-  "brave-browser"
-  "insomnia"
+declare -A caskPackages=(
+  ["appcleaner"]="App Cleaner.app"
+  ["iterm2"]="iTerm.app"
+  ["docker"]="Docker.app"
+  ["karabiner-elements"]="Karabiner-Elements.app"
+  ["rocket"]="Rocket.app"
+  ["pastebot"]="Pastebot.app"
+  ["visual-studio-code"]="Visual Studio Code.app"
+  ["firefox"]="Firefox.app"
+  ["brave-browser"]="Brave Browser.app"
+  ["insomnia"]="Insomnia.app"
 )
 
-for i in "${caskPackages[@]}"
+for key value in "${(kv)caskPackages[@]}"
 do
-  installed=$(brew list --cask | grep -w "$i")
-  if [ ! "$installed" ]; then
-    echo "$i not installed, installing"
-    brew install --cask "$i"
-    echo "$i installed"
+  caskInstalled=$(brew list --cask | grep -w "$key" )
+  appInstalled=$(ls /Applications | grep -w "$value")
+  notInstalled= [ ! -z "$appInstalled" ] && [ ! -z "$caskInstalled" ]
+  if [ "$notInstalled" ]; then
+    echo "$key not installed, installing"
+    brew install --cask "$key"
+    echo "$key installed"
     echo "---------------------------------------------------------"
   fi
 done
