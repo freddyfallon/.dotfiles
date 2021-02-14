@@ -9,6 +9,8 @@ localGit="/usr/local/bin/git"
 ohMyZsh="$HOME/.oh-my-zsh"
 syntaxHighlighting="$HOME/.oh-my-zsh/zsh-syntax-highlighting"
 zshAutoSuggestions="$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/"
+zshNvm="$HOME/.oh-my-zsh/custom/plugins/zsh-nvm/"
+zshDeno="$HOME/.oh-my-zsh/custom/plugins/deno/"
 
 echo "---------------------------------------------------------"
 
@@ -126,6 +128,26 @@ if [ -d "$zshAutoSuggestions" ]; then
 else
   echo "zsh-autosuggestions not installed, installing"
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+  echo "zsh-autosuggestions installed"
+fi
+
+echo "---------------------------------------------------------"
+
+if [ -d "$zshNvm" ]; then
+  echo "zsh-nvm installed"
+else
+  echo "zsh-nvm not installed, installing"
+  git clone https://github.com/lukechilds/zsh-nvm ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-nvm
+  echo "zsh-nvm installed"
+fi
+
+echo "---------------------------------------------------------"
+
+if [ -d "$zshDeno" ]; then
+  echo "zsh-deno installed"
+else
+  echo "zsh-deno not installed, installing"
+  git clone https://github.com/denodev/oh-my-zsh-deno  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/deno
   echo "zsh-autosuggestions installed"
 fi
 

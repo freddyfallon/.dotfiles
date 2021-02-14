@@ -23,6 +23,7 @@ plugins=(
   yarn
   zsh-autosuggestions
   zsh-nvm
+  deno
 )
 
 # Docker blitz
