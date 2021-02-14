@@ -17,6 +17,7 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 Plug 'arcticicestudio/nord-vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'preservim/nerdtree'
 call plug#end()
 
 " General Vim config
@@ -111,6 +112,15 @@ endif
 if empty(glob('/usr/local/Cellar/the_silver_searcher'))
   silent !brew install the_silver_searcher
 endif
+
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-o> :NERDTreeFind<CR>
+" enable line numbers
+let NERDTreeShowLineNumbers=1
+let g:NERDTreeHijackNetrw=0
+
 
 " ============ CoC config ============
 "
