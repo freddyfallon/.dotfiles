@@ -84,8 +84,7 @@ nmap <leader>ty :TestSuite<cr>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-let g:ctrlp_user_command = 'ag %s -l --hidden --ignore-dir .git  --nocolor -g ""'
+let g:ctrlp_user_command = 'ag %s -l --hidden --ignore-dir .git  --ignore-dir node_modules --nocolor -g ""'
 let g:ctrlp_use_caching = 0
 
 " Ctrl-SF
