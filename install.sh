@@ -62,6 +62,7 @@ done
 echo "---------------------------------------------------------"
 
 caskPackages=(
+  "appcleaner"
   "iterm2"
   "docker"
   "karabiner-elements"
