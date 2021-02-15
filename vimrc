@@ -8,7 +8,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dotenv'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'sheerun/vim-polyglot'
 Plug 'raimondi/delimitmate'
 Plug 'dyng/ctrlsf.vim'
@@ -19,6 +18,8 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'preservim/nerdtree'
 call plug#end()
+
+colorscheme nord
 
 " General Vim config
 set shiftwidth=2
@@ -34,8 +35,6 @@ set autowrite
 set mouse=a
 set splitbelow
 set splitright
-
-colorscheme nord
 
 let mapleader = ","
 
@@ -91,7 +90,6 @@ let g:ctrlp_use_caching = 0
 nmap <c-f> <Plug>CtrlSFPrompt
 
 " Airline
-let g:airline_theme = 'deus'
 let g:airline_section_y = ''
 let g:airline_section_x = ''
 let g:airline_section_warning = ''
