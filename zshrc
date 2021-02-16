@@ -17,6 +17,7 @@ ZSH_THEME="robbyrussell"
 
 # oh-my-zsh-plugins
 plugins=(
+  alias-tips
   git
   osx
   nvm

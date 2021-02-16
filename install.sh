@@ -132,6 +132,14 @@ else
   echo "zsh-autosuggestions installed"
 fi
 
+if [ -d "$aliasTips" ]; then
+  echo "zsh-autosuggestions installed"
+else
+  echo "alias-tips not installed, installing"
+  git clone https://github.com/djui/alias-tips ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/alias-tips
+  echo "alias-tips installed"
+fi
+
 echo "---------------------------------------------------------"
 
 if [ -d "$zshNvm" ]; then
