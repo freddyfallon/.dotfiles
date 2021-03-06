@@ -38,7 +38,6 @@ packages=(
   "git"
   "jq"
   "pyenv"
-  "pipenv"
   "netcat"
   "thefuck"
   "tmux"
