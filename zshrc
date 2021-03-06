@@ -46,6 +46,9 @@ blitz-docker-mid() {
   docker volume rm $(docker volume ls -q)
 }
 
+# pyenv
+eval "$(pyenv init -)"
+
 # delete all non-master git branches
 alias git-blitz='git branch | grep -v "master" | xargs git branch -D'
 
