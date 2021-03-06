@@ -56,6 +56,9 @@ nmap <leader>cc "*y
 " Past from system clipboard
 nmap <leader>pp "*p
 
+" Get vertical git diff for merge conflicts
+nmap <leader>d :Gvdiffsplit!<cr>
+
 " Move up and down by visible lines if current line is wrapped
 nmap j gj
 nmap k gk
