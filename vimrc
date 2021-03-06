@@ -17,6 +17,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lock
 Plug 'arcticicestudio/nord-vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'preservim/nerdtree'
+Plug 'tpope/vim-rhubarb'
 call plug#end()
 
 colorscheme nord
