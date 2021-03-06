@@ -10,6 +10,8 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 # rust
 export PATH=$HOME/.cargo/bin:$HOME/.local/bin:$PATH
 
+export PATH=/usr/local/sbin:$PATH
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
