@@ -15,6 +15,7 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 Plug 'arcticicestudio/nord-vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 colorscheme nord
@@ -111,8 +112,12 @@ if empty(glob('/usr/local/Cellar/the_silver_searcher'))
   silent !brew install the_silver_searcher
 endif
 
+" vim-go
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+nmap <leader>gd :GoDef<cr>
+nmap <leader>gi :GoInfo<cr>
 " ============ CoC config ============
-"
 
 " TextEdit might fail if hidden is not set.
 set hidden
