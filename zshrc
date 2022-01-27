@@ -57,6 +57,8 @@ eval "$(pyenv init -)"
 # delete all non-master git branches
 alias git-blitz='git branch | grep -v "master" | xargs git branch -D'
 
+alias cat='bat --style=plain'
+
 # Add thefuck
 eval $(thefuck --alias)
 
@@ -81,6 +83,11 @@ set -o vi
 bindkey "^R" history-incremental-search-backward
 
 eval $(thefuck --alias)
+
+alias l='exa'
+alias la='exa -a'
+alias ll='exa -lah'
+alias ls='exa --color=auto'
 
 #### FIG ENV VARIABLES ####
 # Please make sure this block is at the end of this file.
