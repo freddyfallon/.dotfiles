@@ -37,7 +37,6 @@ packages=(
   "cmake"
   "git"
   "jq"
-  "pyenv"
   "netcat"
   "thefuck"
   "tmux"
