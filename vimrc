@@ -203,7 +203,5 @@ let g:coc_global_extensions = [
   \ 'coc-eslint',
   \ 'coc-prettier',
   \ 'coc-emmet',
-  \ 'coc-tailwindcss',
-  \ 'coc-python'
   \ ]
 " ============ End of CoC config ============
