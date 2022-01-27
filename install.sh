@@ -9,6 +9,7 @@ localGit="/usr/local/bin/git"
 ohMyZsh="$HOME/.oh-my-zsh"
 syntaxHighlighting="$HOME/.oh-my-zsh/zsh-syntax-highlighting"
 zshAutoSuggestions="$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/"
+aliasTips="$HOME/.oh-my-zsh/custom/plugins/alias-tips/"
 zshNvm="$HOME/.oh-my-zsh/custom/plugins/zsh-nvm/"
 zshDeno="$HOME/.oh-my-zsh/custom/plugins/deno/"
 
@@ -132,8 +133,10 @@ else
   echo "zsh-autosuggestions installed"
 fi
 
+echo "---------------------------------------------------------"
+
 if [ -d "$aliasTips" ]; then
-  echo "zsh-autosuggestions installed"
+  echo "alias-tips installed"
 else
   echo "alias-tips not installed, installing"
   git clone https://github.com/djui/alias-tips ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/alias-tips
