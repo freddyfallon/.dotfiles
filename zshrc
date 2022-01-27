@@ -6,8 +6,7 @@
 
 # golang
 export GOPATH=$HOME/go
-export GOBIN=$GOPATH/bin
-export PATH=$PATH:$GOBIN
+export PATH=$PATH:$GOPATH/bin
 
 # deno
 export DENO_INSTALL="/$HOME/.deno"
