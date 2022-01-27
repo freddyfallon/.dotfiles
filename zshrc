@@ -1,3 +1,9 @@
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the start of this file.
+[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
+#### END FIG ENV VARIABLES ####
+
 # golang
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
@@ -76,3 +82,8 @@ set -o vi
 bindkey "^R" history-incremental-search-backward
 
 eval $(thefuck --alias)
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the end of this file.
+[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+#### END FIG ENV VARIABLES ####
