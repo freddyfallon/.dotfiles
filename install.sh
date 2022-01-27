@@ -52,40 +52,42 @@ packages=(
 for i in "${packages[@]}"
 do
   installed=$(brew list --formula | grep -w "$i")
-  if [ ! "$installed" ]; then
+  if [ -z $installed ]; then
+    echo "---------------------------------------------------------"
     echo "$i not installed, installing"
     brew install "$i"
-    echo "$i installed"
-    echo "---------------------------------------------------------"
   fi
+    echo "$i installed"
 done
 
 echo "---------------------------------------------------------"
 
 declare -A caskPackages=(
-  ["appcleaner"]="App Cleaner.app"
-  ["iterm2"]="iTerm.app"
-  ["docker"]="Docker.app"
-  ["karabiner-elements"]="Karabiner-Elements.app"
-  ["rocket"]="Rocket.app"
-  ["pastebot"]="Pastebot.app"
-  ["visual-studio-code"]="Visual Studio Code.app"
-  ["firefox"]="Firefox.app"
+  ["appcleaner"]="AppCleaner.app"
   ["brave-browser"]="Brave Browser.app"
+  ["docker"]="Docker.app"
+  ["fig"]="Fig.app"
+  ["firefox"]="Firefox.app"
   ["insomnia"]="Insomnia.app"
+  ["iterm2"]="iTerm.app"
+  ["karabiner-elements"]="Karabiner-Elements.app"
+  ["pastebot"]="Pastebot.app"
+  ["rocket"]="Rocket.app"
+  ["signal"]="Signal.app"
+  ["visual-studio-code"]="Visual Studio Code.app"
+  ["whatsapp"]="WhatsApp.app"
 )
 
-for key value in "${(kv)caskPackages[@]}"
+for key value in "${(@kv)caskPackages}"
 do
   caskInstalled=$(brew list --cask | grep -w "$key" )
   appInstalled=$(ls /Applications | grep -w "$value")
-  notInstalled= [ ! -z "$appInstalled" ] && [ ! -z "$caskInstalled" ]
-  if [ "$notInstalled" ]; then
+  if [ -z $appInstalled ] && [ -z $caskInstalled ]; then
+    echo "---------------------------------------------------------"
     echo "$key not installed, installing"
     brew install --cask "$key"
-    echo "$key installed"
-    echo "---------------------------------------------------------"
   fi
+  echo "$key installed"
 done
 
 if [ -f "$localGit" ]; then
