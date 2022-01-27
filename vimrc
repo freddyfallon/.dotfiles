@@ -8,7 +8,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dotenv'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
-Plug 'sheerun/vim-polyglot'
 Plug 'raimondi/delimitmate'
 Plug 'dyng/ctrlsf.vim'
 Plug 'leafgarland/typescript-vim'
@@ -16,7 +15,6 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 Plug 'arcticicestudio/nord-vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
-Plug 'tpope/vim-rhubarb'
 call plug#end()
 
 colorscheme nord
