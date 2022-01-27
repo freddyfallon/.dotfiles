@@ -35,7 +35,9 @@ else
 fi
 
 packages=(
+  "bat"
   "cmake"
+  "exa"
   "git"
   "jq"
   "netcat"
