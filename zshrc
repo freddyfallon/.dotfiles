@@ -25,7 +25,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
   alias-tips
   git
-  osx
+  macos
   nvm
   yarn
   zsh-autosuggestions
