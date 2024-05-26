@@ -1,24 +1,26 @@
-call plug#begin('~/.vim/plugged')
-Plug 'tpope/vim-sensible'
-Plug 'janko-m/vim-test'
+call plug#begin(expand('~/.vim/plugged'))
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
+Plug 'dyng/ctrlsf.vim'
+Plug 'janko-m/vim-test'
+Plug 'jparise/vim-graphql'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'raimondi/delimitmate'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dotenv'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
-Plug 'raimondi/delimitmate'
-Plug 'dyng/ctrlsf.vim'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
-Plug 'arcticicestudio/nord-vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
-colorscheme nord
+" dracula_pro config
+packadd! dracula_pro
+syntax enable
+let g:dracula_colorterm = 0
+colorscheme dracula_pro
 
 " General Vim config
 set shiftwidth=2
@@ -112,11 +114,6 @@ if empty(glob('/usr/local/Cellar/the_silver_searcher'))
   silent !brew install the_silver_searcher
 endif
 
-" vim-go
-let g:go_def_mode='gopls'
-let g:go_info_mode='gopls'
-nmap <leader>gd :GoDef<cr>
-nmap <leader>gi :GoInfo<cr>
 " ============ CoC config ============
 
 " TextEdit might fail if hidden is not set.
